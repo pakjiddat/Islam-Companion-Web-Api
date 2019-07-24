@@ -1,0 +1,4 @@
+param_string_language|param_string_narrator|return_value|return_type|rule
+Urdu|Abul A'ala Maududi|{"key": "translation", "count": 1, "operator": ">="}|array|count
+Urdu|Abul A'ala Maududi|{"key": "translation", "count": 1, "operator": ">="}|array|count
+Urdu|Abul A'ala Maududi|{"key": "translation", "count": 1, "operator": ">="}|array|count

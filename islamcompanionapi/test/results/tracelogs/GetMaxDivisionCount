@@ -1,0 +1,32 @@
+TRACE START [2019-03-11 10:11:22]
+    8.7838    2116384                     -> Framework\Utilities\UtilitiesFramework::Factory() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:45
+    8.7840    2116384                       -> json_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    8.7840    2116640                       -> base64_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    8.7840    2116424                       -> ucfirst() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:79
+    8.7841    2116856                       -> is_callable() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:83
+    8.7841    2117232                       -> call_user_func_array:{/var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89}() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    8.7841    2117624                         -> Framework\Utilities\Profiler::GetInstance() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    8.7842    2116384                     -> Framework\Utilities\Profiler->StartProfiling() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:45
+    8.7842    2116384                       -> microtime() /var/www/html/pakjiddat/islamcompanion/framework/utilities/Profiler.php:60
+    8.7842    2116384                     -> Framework\Utilities\UtilitiesFramework::Factory() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:47
+    8.7843    2116384                       -> json_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    8.7843    2116640                       -> base64_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    8.7843    2116424                       -> ucfirst() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:79
+    8.7844    2116856                       -> is_callable() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:83
+    8.7844    2117232                       -> call_user_func_array:{/var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89}() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    8.7844    2117624                         -> Framework\Utilities\Profiler::GetInstance() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    8.7844    2116384                     -> Framework\Utilities\Profiler->StartProfiling() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:47
+    8.7845    2116384                       -> memory_get_usage() /var/www/html/pakjiddat/islamcompanion/framework/utilities/Profiler.php:67
+    8.7845    2116256                   -> call_user_func_array:{/var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:70}() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:70
+    8.7845    2116648                     -> IslamCompanionApi\Lib\HolyQuran\MetaData->GetMaxDivisionCount() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:70
+    8.7846    2116256                   -> is_string() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:73
+    8.7846    2116256                   -> Framework\Config\Config::GetComponent() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:79
+    8.7847    2116256                   -> Framework\TestManager\TestFunctionValidator->ValidateMethodReturnValue() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:85
+    8.7848    2116256                     -> Framework\TestManager\TestFunctionValidator->ValidateRetVal() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionValidator.php:83
+    8.7849    2116376                   -> json_encode() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:91
+    8.7849    2116256                   -> Framework\TestManager\TestFunctionProcessor->PostProcessTestFunction() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:96
+    8.7849    2116256                     -> function_exists() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:64
+    8.7850    2116256                     -> xdebug_stop_trace() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:66
+    8.7850    2116384
+TRACE END   [2019-03-11 10:11:22]
+

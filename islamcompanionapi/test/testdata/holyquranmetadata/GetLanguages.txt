@@ -1,0 +1,2 @@
+return_value|return_type|rule
+{"count": 43}|array|count

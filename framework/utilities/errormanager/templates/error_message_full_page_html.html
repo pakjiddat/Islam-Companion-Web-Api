@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>An error has occurred</title>
+      <style>
+      	.red-color {color: red;}
+      	.green-color {color: green;}
+      	.blue-color {color: blue;}
+      	.margin-2-perc {margin-left: 2%;display:inline;}
+      	.inline-display {display: inline;}
+      	.function-name {padding-left: 3%;}
+      	.function-details {padding-left: 3%;}
+      </style>      
+   </head>
+   <body>
+      <b>Exception on:</b> <span class='red-color'>{date}</span><br/>
+      <b>Error Code:</b> <span class='red-color'>{error_level}</span><br/>
+      <b>Error File:</b> <span class='red-color'>{error_file}</span><br/>
+      <b>Error Line:</b> <span class='red-color'>{error_line}</span><br/>
+      <b>Error Message:</b> <span class='red-color'>{error_message}</span><br/>
+      <b>Stack Trace:</b>
+      <ol class="function-name">
+      	{stack_trace}
+      </ol>
+   </body>
+</html>

@@ -1,0 +1,38 @@
+TRACE START [2019-02-02 12:50:24]
+    4.3498    1955816                     -> Framework\Utilities\UtilitiesFramework::Factory() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:46
+    4.3502    1955816                       -> json_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    4.3502    1956072                       -> base64_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    4.3503    1955856                       -> ucfirst() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:79
+    4.3504    1956288                       -> is_callable() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:83
+    4.3504    1956664                       -> call_user_func_array:{/var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89}() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    4.3504    1957056                         -> Framework\Utilities\Profiler::GetInstance() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    4.3506    1955816                     -> Framework\Utilities\Profiler->StartProfiling() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:46
+    4.3507    1955816                       -> microtime() /var/www/html/pakjiddat/islamcompanion/framework/utilities/Profiler.php:60
+    4.3508    1955816                     -> Framework\Utilities\UtilitiesFramework::Factory() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:48
+    4.3508    1955816                       -> json_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    4.3509    1956072                       -> base64_encode() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:67
+    4.3510    1955856                       -> ucfirst() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:79
+    4.3510    1956288                       -> is_callable() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:83
+    4.3510    1956664                       -> call_user_func_array:{/var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89}() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    4.3511    1957056                         -> Framework\Utilities\Profiler::GetInstance() /var/www/html/pakjiddat/islamcompanion/framework/utilities/UtilitiesFramework.php:89
+    4.3512    1955816                     -> Framework\Utilities\Profiler->StartProfiling() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:48
+    4.3512    1955816                       -> memory_get_usage() /var/www/html/pakjiddat/islamcompanion/framework/utilities/Profiler.php:67
+    4.3513    1955688                   -> call_user_func_array:{/var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:68}() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:68
+    4.3514    1956080                     -> IslamCompanionApi\Lib\Hadith\MetaData->GetTotalHadithCount() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:68
+    4.3515    1956080                       -> array_values() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:67
+    4.3515    1956456                       -> count() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:69
+    4.3516    1956456                       -> count() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:69
+    4.3516    1956456                       -> count() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:69
+    4.3516    1956456                       -> count() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:69
+    4.3517    1956456                       -> count() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:69
+    4.3517    1956456                       -> count() /var/www/html/pakjiddat/islamcompanion/islamcompanionapi/lib/hadith/MetaData.php:69
+    4.3518    1955688                   -> is_string() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:71
+    4.3518    1955688                   -> Framework\Config\Config::GetComponent() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:77
+    4.3520    1955688                   -> Framework\TestManager\TestFunctionValidator->ValidateMethodReturnValue() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:83
+    4.3522    1955688                     -> Framework\TestManager\TestFunctionValidator->ValidateRetVal() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionValidator.php:82
+    4.3524    1955688                   -> Framework\TestManager\TestFunctionProcessor->PostProcessTestFunction() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/BlackBoxTesting.php:87
+    4.3525    1955688                     -> function_exists() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:65
+    4.3525    1955688                     -> xdebug_stop_trace() /var/www/html/pakjiddat/islamcompanion/framework/testmanager/TestFunctionProcessor.php:67
+    4.3525    1955816
+TRACE END   [2019-02-02 12:50:24]
+

@@ -1,0 +1,5 @@
+param_string_language|param_string_source|return_value|return_type|rule
+Urdu|سنن أبي داود|{"count": 40}|array|count
+Urdu|سنن ابن ماجہ|{"count": 36}|array|count
+Urdu|صحیح بخاری|{"count": 95}|array|count
+Urdu|سنن نسائی|{"count": 52}|array|count

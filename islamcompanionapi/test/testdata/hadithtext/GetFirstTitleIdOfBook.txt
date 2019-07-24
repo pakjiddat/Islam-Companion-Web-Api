@@ -1,0 +1,4 @@
+param_int_hadith_book_id|return_value|return_type|rule
+87|1|int|equals
+42|2474|int|equals
+50|6867|int|equals
