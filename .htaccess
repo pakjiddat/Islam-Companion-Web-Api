@@ -1,0 +1,36 @@
+# BEGIN Pak Jiddat Rewrite Rules
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# RewriteCond %{HTTPS} !on
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTP_HOST} !^(www\.).+$
+# RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_URI} !=/index.php
+RewriteCond %{REQUEST_URI} !.*\.gif$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.png$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.jpg$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.ico$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.css$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.ttf$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.woff$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.woff2$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.js$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.mp3$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.tar.gz$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.sql.tar.bz2$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.db.tar.bz2$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.html$ [NC]
+RewriteCond %{REQUEST_URI} !.*robots.txt$ [NC]
+RewriteCond %{REQUEST_URI} !.*sitemap.txt$ [NC]
+RewriteCond %{REQUEST_URI} !/framework/.*$ [NC]
+RewriteRule .* /index.php [L]
+</IfModule>
+# END Pak Jiddat Rewrite Rules

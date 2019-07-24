@@ -1,0 +1,4 @@
+param_int_hadith_count|param_string_language|return_value|return_type|rule
+5|Urdu|{"count": 5}|array|count
+10|Urdu|{"count": 10}|array|count
+15|Urdu|{"count": 15}|array|count

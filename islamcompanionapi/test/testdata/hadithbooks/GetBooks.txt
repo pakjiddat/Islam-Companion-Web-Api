@@ -1,0 +1,4 @@
+param_string_source|return_value|return_type|rule
+صحیح بخاری|{"count":95}|array|count
+سنن أبي داود|{"count":40}|array|count
+سنن ابن ماجہ|{"count":36}|array|count

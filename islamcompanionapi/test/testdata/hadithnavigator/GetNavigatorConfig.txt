@@ -1,0 +1,6 @@
+param_string_source|param_int_book_id|param_int_title_id|param_string_language|param_string_action|return_value|return_type|rule
+صحیح بخاری|87|3|Urdu|next|{"book_id": 87, "title_id": 5}|array|equals
+صحیح بخاری|87|5|Urdu|prev|{"book_id": 87, "title_id": 3}|array|equals
+صحیح بخاری|87|6|Urdu|source_box|{"book_id": 87, "title_id": 1}|array|equals
+صحیح بخاری|1|6|Urdu|book_box|{"book_id": 1, "title_id": 7273}|array|equals
+صحیح بخاری|87|6|Urdu|prev|{"book_id": 87, "title_id": 5}|array|equals

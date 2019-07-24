@@ -1,0 +1,4 @@
+param_int_div_num|param_string_division|return_value|return_type|rule
+10|hizb|{"count": 1}|array|count
+5|juz|{"count": 1}|array|count
+2|manzil|{"count": 5}|array|count

@@ -1,0 +1,4 @@
+param_int_book_id|param_string_language|return_value|return_type|rule
+87|Urdu|{"count": 6}|array|count
+1|Urdu|{"count": 57}|array|count
+12|Urdu|{"count": 29}|array|count

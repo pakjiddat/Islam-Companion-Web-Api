@@ -1,0 +1,54 @@
+url: ^/api/get_suras_in_division$
+callback: {"object": "holyquranapi", "function": "HandleGetSurasInDivision"}
+
+url: ^/api/get_ruku_list$
+callback: {"object": "holyquranapi", "function": "HandleGetRukuList"}
+
+url: ^/api/get_verses$
+callback: {"object": "holyquranapi", "function": "HandleGetVerses"}
+validator: {"object": "holyquranapi", "function": "ValidateParameter"}
+
+url: ^/api/get_random_verses$
+callback: {"object": "holyquranapi", "function": "HandleGetRandomVerses"}
+validator: {"object": "holyquranapi", "function": "ValidateParameter"}
+
+url: ^/api/get_quran_nav_config$
+callback: {"object": "holyquranapi", "function": "HandleGetQuranNavConfig"}
+
+url: ^/api/get_languages$
+callback: {"object": "holyquranapi", "function": "HandleGetLanguages"}
+
+url: ^/api/get_narrators$
+callback: {"object": "holyquranapi", "function": "HandleGetNarrators"}
+
+url: ^/api/search_ayat$
+callback: {"object": "holyquranapi", "function": "HandleSearchAyat"}
+validator: {"object": "holyquranapi", "function": "ValidateParameter"}
+
+url: ^/api/get_hadith_books$
+callback: {"object": "hadithapi", "function": "HandleGetHadithBooks"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}
+
+url: ^/api/get_hadith_titles$
+callback: {"object": "hadithapi", "function": "HandleGetHadithTitles"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}
+
+url: ^/api/get_hadith$
+callback: {"object": "hadithapi", "function": "HandleGetHadithText"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}
+
+url: ^/api/get_random_hadith$
+callback: {"object": "hadithapi", "function": "HandleGetRandomHadithText"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}
+
+url: ^/api/get_hadith_nav_config$
+callback: {"object": "hadithapi", "function": "HandleGetHadithNavConfig"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}
+
+url: ^/api/get_hadith_sources$
+callback: {"object": "hadithapi", "function": "HandleGetHadithSources"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}
+
+url: ^/api/search_hadith$
+callback: {"object": "hadithapi", "function": "HandleSearchHadith"}
+validator: {"object": "hadithapi", "function": "ValidateParameter"}

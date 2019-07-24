@@ -1,0 +1,4 @@
+param_string_action|param_int_div_num|param_string_division|param_int_sura|param_int_sura_ruku|return_value|return_type|rule
+next|2|ruku|2|2|{"sura": 2, "sura_ruku": 3, "start_ayat": 21, "end_ayat": 29, "div_num": 4, "audiofile": "baqara"}|array|equals
+next|5|hizb|2|9|{"sura": 2, "sura_ruku": 10, "start_ayat": 83, "end_ayat": 86, "div_num": 5, "audiofile": "baqara"}|array|equals
+next|8|juz|6|14|{"sura": 6, "sura_ruku": 15, "start_ayat": 122, "end_ayat": 129, "div_num": 8, "audiofile": "alanam"}|array|equals

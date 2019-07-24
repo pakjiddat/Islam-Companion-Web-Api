@@ -1,0 +1,35 @@
+name: Bootstrap
+url: http://getbootstrap.com/
+version: 4.1.3
+last updated: 24-07-2018
+license: https://github.com/twbs/bootstrap/blob/v4-dev/LICENSE (MIT license)
+
+name: JQuery
+url: https://jquery.com/
+version: 3.3.1
+last updated: 20-01-2018
+license: https://jquery.org/license/ (MIT license)
+
+name: W3.CSS
+url: https://www.w3schools.com/w3css/
+version: 4.10
+last updated: 24-03-2017
+license: No License
+
+name: W3.JS
+url: https://www.w3schools.com/w3js/
+version: 1.03
+last updated: 01-12-2017
+license: No License
+
+name: Qunit
+url: https://qunitjs.com/
+version: 2.6.2
+last updated: 19-08-2018
+license: https://github.com/qunitjs/qunit/blob/master/LICENSE.txt (Js Foundation)
+
+name: Font Awesome
+url: https://fontawesome.com/
+version: 5.9.0
+last updated: 04-06-2019
+license: https://fontawesome.com/license/free (Font Awesome Free License)

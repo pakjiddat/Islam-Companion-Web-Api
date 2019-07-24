@@ -1,0 +1,4 @@
+param_string_source|return_value|return_type|rule
+صحیح بخاری|87|int|equals
+سنن أبي داود|193|int|equals
+سنن ابن ماجہ|159|int|equals

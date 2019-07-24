@@ -1,0 +1,4 @@
+param_int_div_num|param_string_division|param_int_sura|return_value|return_type|rule
+8|juz|6|{"start_ruku": 14, "end_ruku": 20}|array|equals
+10|hizb|2|{"start_ruku": 19, "end_ruku": 21}|array|equals
+2|manzil|6|{"start_ruku": 1, "end_ruku": 20}|array|equals

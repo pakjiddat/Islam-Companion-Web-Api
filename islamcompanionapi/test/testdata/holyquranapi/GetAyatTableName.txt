@@ -1,0 +1,2 @@
+return_value|return_type|rule
+ic_quranic_text-u|string|equals

@@ -1,0 +1,2 @@
+param_string_language|return_value|return_type|rule
+English|{"count" : 8}|array|count

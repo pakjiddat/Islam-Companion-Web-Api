@@ -1,0 +1,4 @@
+param_int_sura|param_string_division|param_int_div_num|return_value|return_type|rule
+2|hizb|6|{"count": 3}|array|count
+2|hizb|4|{"count": 3}|array|count
+8|juz|10|{"count": 6}|array|count

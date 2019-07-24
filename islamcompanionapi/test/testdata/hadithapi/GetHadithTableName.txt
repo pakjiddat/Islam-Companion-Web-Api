@@ -1,0 +1,3 @@
+param_string_type|return_value|return_type|rule
+books|ic_hadith_books_urdu|string|equals
+text|ic_hadith_urdu|string|equals
