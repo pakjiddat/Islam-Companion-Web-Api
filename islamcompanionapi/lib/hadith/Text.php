@@ -18,20 +18,22 @@ final class Text
     /**
      * It fetches the ids of all hadith titles that have title same as the given title
      *
-     * @param int $title_id the hadith title id
+     * @param int $title_id the hadith title id    
      *
      * @return array $title_ids the list of hadith title ids
      */
     public function GetHadithTitleIds(int $title_id) : array
     {                
+        /** The hadith book id is fetched */
+        $book_id        = Config::GetComponent("hadithbooks")->GetHadithBookId($title_id);
         /** The database object and table name are fetched */
         $dbinfo         = Config::GetComponent("hadithapi")->GetDbInfo("text");
         
         /** The SQL query */
-        $sql            = "SELECT id FROM `" . $dbinfo['table_name'] . "` WHERE title=";
+        $sql            = "SELECT id FROM `" . $dbinfo['table_name'] . "` WHERE book_id=? AND title=";
         $sql            .= " (SELECT title from `" . $dbinfo['table_name'] . "` WHERE id=?)";
         /** The query parameters */
-        $query_params   = array($title_id);
+        $query_params   = array($book_id, $title_id);
         /** All rows are fetched */
         $title_ids      = $dbinfo['dbobj']->AllRows($sql, $query_params);
 

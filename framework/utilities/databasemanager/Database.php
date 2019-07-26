@@ -71,10 +71,11 @@ final class Database
      * Used to prepare the given sql query
      *
      * @param string $sql sql query that needs to be prepared
+     * @param array $driver_options the options for the database driver. e.g scrollable cursor
      *     
      * @return \PDOStatement $sth the PDOStatement object representing prepared sql query
      */
-    public function Prepare(string $sql) : \PDOStatement
+    public function Prepare(string $sql, array $driver_options = array()) : \PDOStatement
     {
         /** An object of DbLogManager class is fetched */
         $this->dblogmanager            = $this->dbinitializer->GetDbManagerClassObj("DbLogManager");
@@ -82,7 +83,7 @@ final class Database
         $this->dblogmanager->LogQuery(true);
         
         /** The SQL query is prepared */
-        $sth                           = $this->pdo->prepare($sql);
+        $sth                           = $this->pdo->prepare($sql, $driver_options);
         
         /** The query logging is stopped */
         $this->dblogmanager->LogQuery(false, $sql);
@@ -102,28 +103,27 @@ final class Database
     public function Execute(string $sql, ?array $query_params, ?\PDOStatement $sth = null) : bool
     {
         /** An object of DbLogManager class is fetched */
-        $this->dblogmanager                    = $this->dbinitializer->GetDbManagerClassObj("DbLogManager");
+        $this->dblogmanager          = $this->dbinitializer->GetDbManagerClassObj("DbLogManager");
         /** The query logging is started */
         $this->dblogmanager->LogQuery(true);
         
         /** If the prepared sql query is not provided */
         if ($sth == null) {
             /** The SQL query is prepared */
-            $sth                               = $this->pdo->prepare($sql);
+            $sth                     = $this->pdo->prepare($sql);
         }
-        
         /** If the query parameters are given, then they are used */
         if ($query_params !== null) {
             /** The SQL query is run */
-            $is_run                            = $sth->execute($query_params);
+            $is_run                  = $sth->execute($query_params);
         }
         /** If the query parameters are not given */
         else {
             /** The SQL query is run */
-            $is_run                            = $sth->execute();
+            $is_run                  = $sth->execute();
         }
         /** The number of affected rows */
-        $this->data['affected_rows']           = $sth->rowCount();
+        $this->data['affected_rows'] = $sth->rowCount();
         
         /** The query logging is stopped */
         $this->dblogmanager->LogQuery(false, $sql);
@@ -209,7 +209,7 @@ final class Database
         ?string $sql = null,
         ?array $query_params = null,
         ?\PDOStatement $sth = null,
-        ?int $fetch_style = \PDO::FETCH_ASSOC        
+        ?int $fetch_style = \PDO::FETCH_ASSOC    
     ) : ?array 
     {    
         /** If the data should be cached */

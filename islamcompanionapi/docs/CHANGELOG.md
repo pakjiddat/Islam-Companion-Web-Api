@@ -2,13 +2,10 @@
 
 Changelog for Islam Companion Api:
 
-**1.0.1 (July 24, 2019)**
-* Added the function HandleGetHadithSource to Hadith API. It allows fetching list of Hadith sources for a given language
-* Added the function HandleSearchHadith to Hadith API. It allows searching Hadith text for the given search text
-* Added the function HandleSearchAyat to Holy Quran API. It allows searching Holy Quran ayas for the given search text and language
-* Renamed the function HandleGetHolyQuranNavigatorConfig to HandleGetQuranNavConfig
-* Renamed the function HandleGetHadithNavigatorConfig to HandleGetHandithNavConfig
-* Updated API documentation
+**1.0.1 (July 26, 2019)**
+* Corrected error in fetching quranic text, with language set to Arabic and narrator set to Original Arabic
+* Corrected error in fetching hadith text for given book and title
+* Corrected error in fetching next and prev hadith
 
-**1.0.0 (April 30, 2019)**
+**1.0.0 (July 24, 2019)**
 * Initial release

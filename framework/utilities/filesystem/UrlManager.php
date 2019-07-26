@@ -69,7 +69,8 @@ class UrlManager
 				curl_setopt($ch, CURLOPT_ENCODING , "gzip");
 			}
 			/** If the http headers are given then they are set */
-			if (count($request_headers) > 0) curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
+			if (count($request_headers) > 0)
+			    curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
 			/** Indicates that the response headers should be returned */
 			//curl_setopt($ch, CURLOPT_HEADER, 1);
 			/** If the ip address is given, then it added */

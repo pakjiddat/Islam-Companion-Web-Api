@@ -249,41 +249,50 @@ final class MetaData
     public function GetNextPrevHadithId(int $title_id, string $type) : int
     {
         /** The hadith title is fetched */
-        $title         = $this->GetHadithTitle($title_id);
+        $title          = $this->GetHadithTitle($title_id);
+        /** The title id of the last title is fetched */
+        $last_title_id  = Config::GetComponent("hadithmetadata")->GetLastHadithId();
+        
         /** The database object and table name are fetched */
         $dbinfo        = Config::GetComponent("hadithapi")->GetDbInfo("text");
-        /** The SQL query */
-        $sql           = "SELECT id FROM `" . $dbinfo['table_name'] . "` WHERE ";
-        /** If the next hadith needs to be fetched */
-        if ($type == "next") {
-            /** The SQL query is updated */
-            $sql       .= "id > ?";
-            $sql       .= " AND title !=?";
-            $sql       .= " GROUP BY title ORDER BY id ASC";
-        }            
-        /** If the prev hadith needs to be fetched */
-        else if ($type == "prev") {
-            /** The SQL query is updated */
-            $sql       .= "id < ?";
-            $sql       .= " AND title !=?";
-            $sql       .= " GROUP BY title ORDER BY id DESC";
-        }
-        /** The SQL query is updated */
-        $sql           .= " LIMIT 0,1";
         
-        /** The query parameters */
-        $query_params  = array($title_id, $title);
-        /** The first row is fetched */
-        $row           = $dbinfo['dbobj']->FirstRow($sql, $query_params);
         /** If no data was found and next hadith is required, then title id is set to 1 */
-        if ($row == null && $type == "next")
+        if ($type == "next" && $title_id == $last_title_id)
             $title_id  = 1;
         /** If no data was found and prev hadith is required, then title id is set to the id of last hadith */
-        else if ($row == null && $type == "prev")
-            $title_id  = Config::GetComponent("hadithmetadata")->GetLastHadithId();            
+        else if ($type == "prev" && $title_id == 1)
+            $title_id  = $last_title_id;                                
         /** If data was found */
-        else
-            $title_id  = (int) $row['id'];
+        else {
+            /** The SQL query */
+            $sql = "SELECT id FROM `" . $dbinfo['table_name'] . "` GROUP BY book_id, title ORDER BY id ASC";
+            /** The SQL query is prepared */
+            $sth = $dbinfo['dbobj']->Prepare($sql, array(\PDO::ATTR_CURSOR => \PDO::CURSOR_SCROLL));
+            /** The statement is executed */
+            $sth->execute();
+            
+            /** THe previous row */
+            $prev_row = null;
+            /** Each row is checked */
+            while ($row = $sth->fetch(\PDO::FETCH_ASSOC, \PDO::FETCH_ORI_NEXT)) {
+                /** If the id matches the title id */
+                if ($row['id'] == $title_id) break;
+                /** The previous row id */
+                $prev_row = $row;
+            }
+            
+            /** If the next title is needed */
+            if ($type == "next")
+                /** The next row is fetched */
+                $row = $sth->fetch(\PDO::FETCH_ASSOC, \PDO::FETCH_ORI_NEXT);
+            /** If the prev title is needed */
+            else if ($type == "prev")
+                /** The prev row value is set */
+                $row = $prev_row;
+
+            /** The title id is fetched */
+            $title_id = (int) $row['id'];               
+        }
         
         return $title_id;
     }

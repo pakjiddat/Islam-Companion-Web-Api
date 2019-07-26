@@ -25,33 +25,50 @@ final class Ayas
      * @param int $end_ayat optional the end ayat. if it is less than or equal to 0 then it is not considered
      *
      * @return array $ayat_list the list of ayas in the given sura starting from start aya and ending at end aya
-     *    sura => the sura number
-     *    ayat_id => the ayat number
-     *    sura_ayat_id => the sura ayat number
-     *    translated_text => the ayat translation
+     *    sura => string the sura number
+     *    ayat_id => int the ayat number
+     *    sura_ayat_id => int the sura ayat number
+     *    sura_name => string the sura name
+     *    translated_text => stringthe ayat translation
      *    arabic_text => the ayat text in arabic
      */
     public function GetAyasInSura(int $sura, int $start_ayat, int $end_ayat) : array
     {
-        /** The ayat table name is fetched */
-        $aya_tn         = Config::GetComponent("holyquranapi")->GetAyatTableName();
         /** The database object and table name are fetched */
         $dbinfo         = Config::GetComponent("holyquranapi")->GetDbInfo("quranic_text");
-
+        /** The sura table name is fetched */
+        $sura_tn        = $table_name = Config::$config['general']['mysql_table_names']['sura'];
+        /** The ayat table name is fetched */
+        $aya_tn         = Config::GetComponent("holyquranapi")->GetAyatTableName();
+        /** The Arabic table name */
+        $arabic_tn      = $dbinfo['table_name'];
+        
         /** The list of fields to fetch */
         $field_list     = array(
                               "t1.sura",
                               "t1.id as ayat_id",
                               "t1.sura_ayat_id",
-                              "t1.translated_text",
-                              "t2.arabic_text"
+                              "t2.arabic_text",
+                              "t3.tname as sura_name"
                           );
+
+        /** If the translation table is same as original arabic table */
+        if ($aya_tn == $dbinfo['table_name'])              
+            /** The arabic_text field is appended */
+            $field_list []= "t2.arabic_text as translated_text"; 
+        /** If the translation table is not same as original arabic table */
+        else if ($aya_tn != $dbinfo['table_name'])              
+            /** The arabic_text field is appended */
+            $field_list []= "t1.translated_text";
+                                                  
         /** The field list is formatted */
         $field_list     = implode(",", $field_list);                          
         /** The SQL query for fetching the file name */
-        $sql             = "SELECT " . $field_list . " FROM `" . $aya_tn . "` t1, `". $dbinfo['table_name'] . "` t2";
-        $sql            .= " WHERE t1.sura=? AND t1.sura_ayat_id >=? AND t1.sura_ayat_id <=? AND t1.id=t2.id";
-        $sql            .= " ORDER BY t1.sura_ayat_id ASC";
+        $sql            = "SELECT " . $field_list . " FROM `" . $aya_tn . "` t1, `". $dbinfo['table_name'] . "` t2,";
+        $sql           .= "`" . $sura_tn . "` t3 ";
+        $sql           .= " WHERE t1.sura=? AND t1.sura_ayat_id >=? AND t1.sura_ayat_id <=? AND t1.id=t2.id";
+        $sql           .= " AND t3.sindex=t1.sura";
+        $sql           .= " ORDER BY t1.sura_ayat_id ASC";
         /** The query parameters */
         $query_params   = array($sura, $start_ayat, $end_ayat);
         /** All rows are fetched */

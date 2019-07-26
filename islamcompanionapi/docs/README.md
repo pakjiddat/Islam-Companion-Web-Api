@@ -1,4 +1,4 @@
-<p><img class="img-fluid" src="https://pakjiddat.pk/pakjiddat/ui/images/islamcompanion-web-api.png" alt="Islam Companion Web API"/></p>
+<p><img class="img-fluid" src="https://www.pakjiddat.pk/pakjiddat/ui/images/islamcompanion-web-api.png" alt="Islam Companion Web API"/></p>
 <h3>Introduction</h3>
 <p>The "<b>Islam Companion Web API</b>" project is a RESTFul API (Application Programming Interface) that allows users to add Holy Quran and Hadith data to their applications. It provides Holy Quran translation in 42 languages. Following languages are supported: <b>Amharic, Arabic, Bosnian, Bengali, Bulgarian, Amazigh, Czech, German, Divehi, Spanish, English, Persian, French, Hindi, Hausa, Indonesian, Italian, Japanese, Korean, Kurdish, Malayalam, Malay, Dutch, Norwegian, Portuguese, Polish, Russian, Romanian, Swedish, Somali, Sindhi, Albanian, Swahili, Turkish, Tajik, Tamil, Tatar, Thai, Uzbek, Urdu, Uyghur and Chinese</b>. Hadith translation is provided in <b>Urdu, English and Arabic languages</b></p>
 <p>An example of a website that uses the Islam Companion Web API is the <a href='https://islamcompanion.pakjiddat.pk/'>Islam Companion website</a>. The <a href='https://islamcompanion.pakjiddat.pk/holy-quran'>Holy Quran Reader</a> and <a href='https://islamcompanion.pakjiddat.pk/hadith'>Hadith Reader</a> were developed using the Islam Companion Web API</p>
@@ -31,6 +31,12 @@
     <li>Customize the following variables in the file: <b>api/config/General.php</b>. <b>$config['app_name'], $config['dev_mode'] and $config['site_url']</b></li>
   </ul>
 </div>
+
+<h3>Download Hadith data</h3>
+<p>We have compiled a Hadith database with the purpose of spreading knowlege of Hadith. The database should be used by developers in their own applications. The Hadith database contains text in Urdu, English and Arabic languages.</p>
+
+<p><a href='https://islamcompanion.pakjiddat.pk/islamcompanion/data/hadith.sql.tar.bz2'>Click here</a> to download the Hadith database in <b>.sql</b> format for MySQL server. <a href='https://islamcompanion.pakjiddat.pk/islamcompanion/data/hadith.db.tar.bz2'>Click here</a> to download the Hadith database in <b>.db</b> format for SQLite server</p>
+
 <h3>Frequently asked questions</h3>
 <div>
   <ul>
@@ -41,6 +47,38 @@
     <li><b>From where does the API get its data</b>. The Islam Companion API uses Holy Quran translations from <a href='http://tanzil.net/trans/'>http://tanzil.net/trans/</a>. It uses Hadith data from <a href='http://hadithcollection.com/'>http://hadithcollection.com/</a>.</li>
   </ul>
 </div>
+
+<h3>Sample Code</h3>
+
+```Php
+<?php
+
+$data = array(
+    'language' => 'English',
+    'narrator' => 'Mohammed Marmaduke William Pickthall'
+);
+ 
+// Prepare new cURL resource
+$ch = curl_init('https://islamcompanion.pakjiddat.pk/api/get_random_verses');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+ 
+// Submit the POST request
+$result = curl_exec($ch);
+ 
+// Close cURL session handle
+curl_close($ch);
+
+// json decode the response
+$result = json_decode($result, true);
+
+// Print the result
+print_r($result);
+?>
+```
+
 <h3>Usage</h3>
 <p>The Islam Companion Web API supports the following functions. All function response values are in JSON format.</p>
 <p>To test the api, use the following url: <a href='https://islamcompanion.pakjiddat.pk/api/'>https://islamcompanion.pakjiddat.pk/api/</a> for making api requests.</p>
@@ -51,7 +89,7 @@
 | ---- | ----------- | --- | ---------- | -------- |
 | Get Suras In Division | Returns the list of suras for the given division and division number | /api/get_suras_in_division | <ul><li><b>division</b>. The division name. It can be hizb,juz,page,manzil,ruku</li><li><b>div_num</b>. The division number. It should be a number 1 and 604</li></ul> | The names of all the suras that are in the given division: <ul> <li><b>tname</b>. The english name of the sura</li><li><b>ename</b>. A brief description of the sura in English</li><li><b>sindex</b>. The sura number. It should be a number 1 and 114</li></ul> |
 | Get Ruku List | It provides the start and end ruku numbers for the given division, division number and sura | /api/get_ruku_list | <ul><li><b>division</b>. The division name. It can be hizb,juz,page,manzil,ruku</li><li><b>div_num</b>. The division number. It should be a number 1 and 604</li><li><b>sura</b>. The sura number. It should be a number 1 and 114</li></ul> | The start and end ruku numbers<ul><li><b>start_ruku</b>. The start sura ruku number. It should be a number 1 and 40</li><li><b>end_ruku</b>. The end sura ruku number. It should be a number 1 and 40</li></ul> |
-| Get Verses | It returns the arabic text and translation for the given verses | /api/get_verses | <ul><li><b>start_ayat</b>. The start ayat number</li><li><b>end_ayat</b>. The end ayat number</li><li><b>language</b>. The language for the verse text</li><li><b>narrator</b>. The translator name</li><li><b>sura</b>. The sura number</li></ul> | The list of required ayas<ul><li><b>arabic_text</b>. The arabic text</li><li><b>translation</b>. The translated text</li></ul> |
+| Get Verses | It returns the arabic text and translation for the given verses | /api/get_verses | <ul><li><b>start_ayat</b>. The start ayat number</li><li><b>end_ayat</b>. The end ayat number</li><li><b>language</b>. The language for the verse text</li><li><b>narrator</b>. The translator name</li><li><b>sura</b>. The sura number</li></ul> | The list of required ayas<ul><li><b>arabic_text</b>. The arabic text</li><li><b>translation</b>. The translated text</li><li><b>sura_id</b>. The sura id</li><li><b>sura_name</b>. The sura name</li><li><b>ayat</b>. The ayat number</li></ul> |
 | Get Random Verses | It returns the text for a random ruku along with meta data | /api/get_random_verses | <ul><li><b>language</b>. The language for the verse text</li><li><b>narrator</b>. The translator name</li></ul> | The verse data<ul><li><b>arabic</b>. The verse text in arabic</li><li><b>translation</b>. The translated text</li><li><b>meta_data</b>. The ruku meta data</li></ul> |
 | Get Holy Quran Navigator Configuration | It generates the navigator configuration data for the given action | /api/get_quran_nav_config | <ul><li><b>action</b>. The action taken by the user</li><li><b>div_num</b>. The current division number</li><li><b>division</b>. The current division</li><li><b>sura</b>. The current sura</li><li><b>sura_ruku</b>. The current sura ruku</li></ul> | The updated Navigator configuration data<ul><li><b>sura</b>. The new sura</li><li><b>sura_ruku</b>. The new ruku id</li><li><b>start_ayat</b>. The new start ayat</li><li><b>end_ayat</b>. The new end ayat</li><li><b>div_num</b>. The new division number</li><li><b>audiofile</b>. The base audio file name</li></ul> |
 | Get Languages | It returns the list of all supported languages | /api/get_languages | None | The list of all supported languages |

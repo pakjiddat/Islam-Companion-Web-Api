@@ -29,14 +29,14 @@ final class RequiredObjects
     	/** If the application is in development mode */
         if ($parameters['dev_mode']) {
             /** The database name */
-            $db                                       = "dev-db-name";
+            $db                                       = "pakjiddat_islamcompanion";
             /** The dsn value */
             $dsn                                      = "mysql:host=localhost;dbname=" . $db . ";charset=utf8";
         	/** The database parameters */
         	$dbparams                                 = array(
 		                                                    "dsn" => $dsn,
-				                                            "user_name" => "user-name",
-				                                            "password" => "password",
+				                                            "user_name" => "nadir",
+				                                            "password" => "kcW5eFSCbPXb#7LHvUGG8T8",
 				                                            "use_cache" => false,
 				                                            "debug" => 2,
 				                                            "app_name" => "Islam Companion Api"
@@ -47,12 +47,12 @@ final class RequiredObjects
         /** If the application is in production mode */
         else {
             /** The dsn value */
-            $dsn                                      = "mysql:host=localhost;dbname=prod-db-name;charset=utf8";
+            $dsn                                      = "mysql:host=localhost;dbname=pakjidda_islamcompanion;charset=utf8";
             /** The database parameters */
             $dbparams                                 = array(
                                                             "dsn" => $dsn,
-				                                            "user_name" => "user-name",
-				                                            "password" => "password",
+				                                            "user_name" => "pakjidda_islamcompanion",
+				                                            "password" => "VLuvZ8WSUrThWio10Qdf@6A",
 				                                            "debug" => 2,
 				                                            "use_cache" => false,
 				                                            "app_name" => "Islam Companion Api"

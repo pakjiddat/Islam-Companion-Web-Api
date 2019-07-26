@@ -167,6 +167,9 @@ final class HolyQuranApi extends IslamCompanionApi
      * @return json $ayat_list the list of required ayas
      *    arabic_text => string the arabic text
      *    translation => string the translated text
+     *    sura_id => int the sura id
+     *    sura_name => string the sura name
+     *    ayat => int the ayat number
      */
     public function HandleGetVerses(
         int $end_ayat,
@@ -188,7 +191,10 @@ final class HolyQuranApi extends IslamCompanionApi
                                 /** The required ayat data */
                                 $ayat_data = array(
                                                  "arabic_text" => $data["arabic_text"],
-                                                 "translation" => $data["translated_text"]
+                                                 "translation" => $data["translated_text"],
+                                                 "sura_name" => $data["sura_name"],
+                                                 "ayat" => $data["sura_ayat_id"],
+                                                 "sura_id" => $data["sura"]
                                              );
                                 return $ayat_data;
                             },
