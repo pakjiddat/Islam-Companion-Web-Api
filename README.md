@@ -45,6 +45,7 @@
     <li><b>Which languages are supported by the Islam Companion Web API</b>. <a href="#introduction">Click Here</a></li>
     <li><b>What functions are provided by the Islam Companion Api</b>. Please read the documentation.</li>
     <li><b>From where does the API get its data</b>. The Islam Companion API uses Holy Quran translations from <a href='http://tanzil.net/trans/'>http://tanzil.net/trans/</a>. It uses Hadith data from <a href='http://hadithcollection.com/'>http://hadithcollection.com/</a>.</li>
+    <li><b>How do I use the API</b>. To use the API, you have to make HTTP POST request to the server islamcompanion.pakjiddat.pk. Please see following sample code in Php language.</li>
   </ul>
 </div>
 
@@ -81,7 +82,7 @@ print_r($result);
 
 <h3>Usage</h3>
 <p>The Islam Companion Web API supports the following functions. All function response values are in JSON format.</p>
-<p>To test the api, use the following url: <a href='https://islamcompanion.pakjiddat.pk/api/'>https://islamcompanion.pakjiddat.pk/api/</a> for making api requests.</p>
+<p>To test the API, use the following url: <a href='https://islamcompanion.pakjiddat.pk/api/'>https://islamcompanion.pakjiddat.pk/api/</a> for making API requests. All API requests must be of type HTTP POST and should include the required API parameters.</p>
 
 <h3>API calls for fetching Holy Quran data</h3>
 
