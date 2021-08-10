@@ -10,7 +10,7 @@
     <li>It provides translations of Hadith in Urdu, English and Arabic languages</li>
     <li>It provides 8 API functions for fetching Quranic data</li>
     <li>It provides 7 API functions for fetching Hadith data</li>
-    <li>The source code is available under <a href='https://github.com/nadirlc/islamcompanion-web-api/blob/master/LICENSE'>GPL License</a></li>
+    <li>The source code is available under <a href='https://github.com/pakjiddat/islamcompanion-web-api/blob/master/LICENSE'>GPL License</a></li>
     <li>The source code is well commented and easy to update</li>
   </ul>
 </div>
@@ -20,7 +20,7 @@
 <p>The following steps can be used to install the "Islam Companion Web API" project on your own server:</p>
 <div>
   <ul>
-    <li>Download the <a href='https://github.com/nadirlc/islamcompanion-web-api/archive/master.zip'>source code</a> from GitHub</li>
+    <li>Download the <a href='https://github.com/pakjiddat/islamcompanion-web-api/archive/master.zip'>source code</a> from GitHub</li>
     <li>Move the source code to the document root of a virtual host</li>
     <li>Download the contents of the database from: <a href='https://drive.google.com/open?id=1Lq0xjVPiTso1io-uhKxz7aT7McIlBwj6'>here</a></li>
     <li>Extract the downloaded file</li>
@@ -32,11 +32,10 @@
 </div>
 
 <h3>Download data</h3>
-<p>We have compiled a Hadith database with the purpose of spreading knowlege of Hadith. The database should be used by developers in their own applications. The Hadith database contains text in Urdu, English and Arabic languages.</p>
 
-<p><a href='https://drive.google.com/open?id=1gd8B0C-N7LcppMNikv1FNQoL_XJ2nuQv'>Click here</a> to download the Hadith database in <b>.sql</b> format for MySQL server. <a href='https://drive.google.com/open?id=1pHo5auUuKiNEi9jlmQJ0-n3oqDEdbDR0'>Click here</a> to download the Hadith database in <b>.db</b> format for SQLite server</p>
+<p><a href='https://drive.google.com/file/d/1gd8B0C-N7LcppMNikv1FNQoL_XJ2nuQv/view?usp=sharing'>Click here</a> to download the Hadith database in <b>.sql</b> format for MySQL server. <a href='https://drive.google.com/file/d/1pHo5auUuKiNEi9jlmQJ0-n3oqDEdbDR0/view?usp=sharing'>Click here</a> to download the Hadith database in <b>.db</b> format for SQLite3</p>
 
-<p><a href='https://drive.google.com/open?id=11a_dQ4i0__--x5PkFjlmwMUxgMdTWbIa'>Click here</a> to download the Quranic database in <b>.db</b> format for SQLite server</p>
+<p><a href='https://drive.google.com/file/d/16BdoFFoi2Vic6eDDqtk72DRppgTWCFI7/view?usp=sharing'>Click here</a> to download the Quranic database in <b>.db</b> format for SQLite3</p>
 
 <h3>Frequently asked questions</h3>
 <div>
