@@ -33,7 +33,7 @@
 
 <h3>Download data</h3>
 
-<p><a href='https://drive.google.com/file/d/1gd8B0C-N7LcppMNikv1FNQoL_XJ2nuQv/view?usp=sharing'>Click here</a> to download the Hadith database in <b>.sql</b> format for MySQL server. <a href='https://drive.google.com/file/d/1pHo5auUuKiNEi9jlmQJ0-n3oqDEdbDR0/view?usp=sharing'>Click here</a> to download the Hadith database in <b>.db</b> format for SQLite3</p>
+<p><a href='https://drive.google.com/file/d/1gd8B0C-N7LcppMNikv1FNQoL_XJ2nuQv/view?usp=sharing'>Click here</a> to download the Hadith database in <b>.sql</b> format for MySQL server. <a href='https://drive.google.com/file/d/1Gio_hAZ-IhHkCfE5GbZyUlUyGJABmYhc/view?usp=share_link'>Click here</a> to download the Hadith database in <b>.db</b> format for SQLite3</p>
 
 <p><a href='https://drive.google.com/file/d/16BdoFFoi2Vic6eDDqtk72DRppgTWCFI7/view?usp=sharing'>Click here</a> to download the Quranic database in <b>.db</b> format for SQLite3</p>
 
